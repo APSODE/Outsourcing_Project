@@ -1,4 +1,9 @@
-from selenium import webdriver
+try:
+    from selenium import webdriver
+except:
+    from Class.PYTHON_MODUAL_DOWN.PYTHON_MODUAL_DOWN import MODUAL_DOWNLOAD
+    MODUAL_DOWNLOAD.DOWNLOAD
+    from selenium import webdriver
 from Class.USER_JSON_RW.rw_json import READ_WRITE
 import time, datetime, sys, os, json
 
@@ -156,13 +161,14 @@ class WEATHER:
         
         
         #======================================================NAVER_WEATHER_INFO======================================================#
-        # DRIVER.get("https://search.naver.com/search.naver?sm=tab_hty.top&where=nexearch&query=%EC%8A%B5%EB%8F%84&oquery=%EC%98%A4%EB%8A%98%EC%9D%98%EB%82%A0%EC%94%A8&tqi=heG%2FSwprvmZssDpZu%2Fdssssstgh-058891")
+            # DRIVER.get("https://search.naver.com/search.naver?sm=tab_hty.top&where=nexearch&query=%EC%8A%B5%EB%8F%84&oquery=%EC%98%A4%EB%8A%98%EC%9D%98%EB%82%A0%EC%94%A8&tqi=heG%2FSwprvmZssDpZu%2Fdssssstgh-058891")
 
-        # CURRENT_HUMIDITY_XPATH = "/html/body[@class='wrap-new api_animation']/div[@id='wrap']/div[@id='container']/div[@id='content']/div[@id='main_pack']/section[@class='sc_new cs_weather _weather']/div[@class='api_subject_bx']/div[@class='api_cs_wrap']/div[@class='weather_box']/div[@class='weather_area _mainArea']/div[@class='today_area _mainTabContent']/div[@class='table_info bytime _todayWeatherByTime']/div[@class='info_list humidity _tabContent _center']/ul[@class='list_area']/li[@class='on now']/dl/dd[@class='weather_item _dotWrapper']/span[1]"
-        # CURRENT_HUMIDITY = int(INTERNAL_FUNC.Driver_Get_X_Path(XPath = CURRENT_HUMIDITY_XPATH, DRIVER = DRIVER).text)
-        # CURRENT_TEMP_XPATH = "/html/body[@class='wrap-new api_animation']/div[@id='wrap']/div[@id='container']/div[@id='content']/div[@id='main_pack']/section[@class='sc_new cs_weather _weather']/div[@class='api_subject_bx']/div[@class='api_cs_wrap']/div[@class='weather_box']/div[@class='weather_area _mainArea']/div[@class='today_area _mainTabContent']/div[@class='main_info']/div[@class='info_data']/p[@class='info_temperature']/span[@class='todaytemp']"
-        # CURRENT_TEMP = int(INTERNAL_FUNC.Driver_Get_X_Path(XPath = CURRENT_TEMP_XPATH, DRIVER = DRIVER).text) 
+            # CURRENT_HUMIDITY_XPATH = "/html/body[@class='wrap-new api_animation']/div[@id='wrap']/div[@id='container']/div[@id='content']/div[@id='main_pack']/section[@class='sc_new cs_weather _weather']/div[@class='api_subject_bx']/div[@class='api_cs_wrap']/div[@class='weather_box']/div[@class='weather_area _mainArea']/div[@class='today_area _mainTabContent']/div[@class='table_info bytime _todayWeatherByTime']/div[@class='info_list humidity _tabContent _center']/ul[@class='list_area']/li[@class='on now']/dl/dd[@class='weather_item _dotWrapper']/span[1]"
+            # CURRENT_HUMIDITY = int(INTERNAL_FUNC.Driver_Get_X_Path(XPath = CURRENT_HUMIDITY_XPATH, DRIVER = DRIVER).text)
+            # CURRENT_TEMP_XPATH = "/html/body[@class='wrap-new api_animation']/div[@id='wrap']/div[@id='container']/div[@id='content']/div[@id='main_pack']/section[@class='sc_new cs_weather _weather']/div[@class='api_subject_bx']/div[@class='api_cs_wrap']/div[@class='weather_box']/div[@class='weather_area _mainArea']/div[@class='today_area _mainTabContent']/div[@class='main_info']/div[@class='info_data']/p[@class='info_temperature']/span[@class='todaytemp']"
+            # CURRENT_TEMP = int(INTERNAL_FUNC.Driver_Get_X_Path(XPath = CURRENT_TEMP_XPATH, DRIVER = DRIVER).text) 
         #======================================================NAVER_WEATHER_INFO======================================================#
+    
 
         DRIVER.get("https://www.weatheri.co.kr/forecast/forecast01.php?mNum=1&sNum=1")
         INPUT_AREA_XPATH = INTERNAL_FUNC.FIND_AREA_XPATH(AREA_NAME = INPUT_AREA_NAME)
